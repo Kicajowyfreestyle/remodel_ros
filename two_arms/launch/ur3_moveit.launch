@@ -1,0 +1,25 @@
+<launch>
+  <arg name="sim" default="false" />
+  <arg name="limited" default="false"/>
+  <arg name="debug" default="false" />
+
+  <!-- Remap follow_joint_trajectory -->
+  <remap if="$(arg sim)" from="/left/follow_joint_trajectory" to="/left/arm_controller/follow_joint_trajectory"/>
+  <remap if="$(arg sim)" from="/right/follow_joint_trajectory" to="/right/arm_controller/follow_joint_trajectory"/>
+
+  <group ns="left">
+  <!-- Launch moveit -->
+  <include file="$(find two_arms)/launch/move_group_left.launch">
+    <arg name="limited" default="$(arg limited)"/>
+    <arg name="debug" default="$(arg debug)" />
+  </include>
+  </group>
+
+  <group ns="right">
+  <!-- Launch moveit -->
+  <include file="$(find two_arms)/launch/move_group_right.launch">
+    <arg name="limited" default="$(arg limited)"/>
+    <arg name="debug" default="$(arg debug)" />
+  </include>
+  </group>
+</launch>

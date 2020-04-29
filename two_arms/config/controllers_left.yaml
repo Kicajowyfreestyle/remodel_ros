@@ -1,0 +1,11 @@
+controller_list:
+  - name: ""
+    action_ns: left/follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      - left_arm_shoulder_pan_joint
+      - left_arm_shoulder_lift_joint
+      - left_arm_elbow_joint
+      - left_arm_wrist_1_joint
+      - left_arm_wrist_2_joint
+      - left_arm_wrist_3_joint

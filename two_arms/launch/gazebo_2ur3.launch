@@ -13,17 +13,18 @@
 
   <group ns="left">
       <!-- send robot urdf to param server -->
-      <include file="$(find ur_description)/launch/ur3_upload.launch">
+      <include file="$(find two_arms_ur_utilities)/launch/ur3_upload.launch">
         <arg name="limited" value="$(arg limited)"/>
+        <arg name="robot" value="left"/>
       </include>
 
       <!-- push robot_description to factory and spawn robot in gazebo -->
-      <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model left_robot -z 0.1 -y 0.3" respawn="false" output="screen" />
+      <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model left_robot" respawn="false" output="screen" />
 
       <include file="$(find ur_gazebo)/launch/controller_utils.launch"/>
 
       <!-- start this controller -->
-      <rosparam file="$(find ur_gazebo)/controller/arm_controller_ur3.yaml" command="load"/>
+      <rosparam file="$(find two_arms_ur_utilities)/controller/left_arm_controller_ur3.yaml" command="load"/>
       <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn arm_controller" respawn="false" output="screen"/>
 
       <!-- load other controllers -->
@@ -32,17 +33,18 @@
 
   <group ns="right">
       <!-- send robot urdf to param server -->
-      <include file="$(find ur_description)/launch/ur3_upload.launch">
+      <include file="$(find two_arms_ur_utilities)/launch/ur3_upload.launch">
         <arg name="limited" value="$(arg limited)"/>
+        <arg name="robot" value="right"/>
       </include>
 
       <!-- push robot_description to factory and spawn robot in gazebo -->
-      <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model right_robot -z 0.1 -y -0.3" respawn="false" output="screen" />
+      <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model right_robot" respawn="false" output="screen" />
 
       <include file="$(find ur_gazebo)/launch/controller_utils.launch"/>
 
       <!-- start this controller -->
-      <rosparam file="$(find ur_gazebo)/controller/arm_controller_ur3.yaml" command="load"/>
+      <rosparam file="$(find two_arms_ur_utilities)/controller/right_arm_controller_ur3.yaml" command="load"/>
       <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn arm_controller" respawn="false" output="screen"/>
 
       <!-- load other controllers -->
