@@ -1,5 +1,0 @@
-<launch>
-  <group ns="left">
-    <node pkg="two_arms" name="movethis" type="moveit.py" output="screen" />
-  </group>
-</launch>

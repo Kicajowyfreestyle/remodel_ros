@@ -29,7 +29,7 @@
   </include>
 
   <!-- Trajectory Execution Functionality -->
-  <include ns="move_group" file="$(find two_arms)/launch/trajectory_execution_right.launch.xml" if="$(arg allow_trajectory_execution)">
+  <include ns="move_group" file="$(find two_arms_ur_utilities)/launch/trajectory_execution_right.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_manage_controllers" value="true" />
     <arg name="moveit_controller_manager" value="ur3" unless="$(arg fake_execution)"/>
     <arg name="moveit_controller_manager" value="fake" if="$(arg fake_execution)"/>

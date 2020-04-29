@@ -9,7 +9,7 @@
 
   <group ns="left">
   <!-- Launch moveit -->
-  <include file="$(find two_arms)/launch/move_group_left.launch">
+  <include file="$(find two_arms_ur_utilities)/launch/move_group_left.launch">
     <arg name="limited" default="$(arg limited)"/>
     <arg name="debug" default="$(arg debug)" />
   </include>
@@ -17,7 +17,7 @@
 
   <group ns="right">
   <!-- Launch moveit -->
-  <include file="$(find two_arms)/launch/move_group_right.launch">
+  <include file="$(find two_arms_ur_utilities)/launch/move_group_right.launch">
     <arg name="limited" default="$(arg limited)"/>
     <arg name="debug" default="$(arg debug)" />
   </include>
