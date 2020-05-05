@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+    <model name="paleta">
+      <pose>1 0 0  0 0 3.14</pose>
+      <static>true</static>
+      <link name="body">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file:///home/piotr/a8/REMODEL/workstation/paleta_in_m.stl</uri></mesh>
+          </geometry>
+			<material>
+			  <ambient>0.5 0.5 0.5 1</ambient>
+			  <diffuse>0.5 0.5 0.5 1</diffuse>
+			  <specular>0.1 0.1 0.1 1</specular>
+			  <emissive>0 0 0 0</emissive>
+			</material>
+        </visual>
+      </link>
+    </model>
+    <model name="wiazka_lewa">
+      <pose>-0.7 -0.7 -0.3  0 0 0</pose>
+      <static>true</static>
+      <link name="body">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file:///home/piotr/a8/REMODEL/workstation/wiazka_lewa_in_m.stl</uri></mesh>
+          </geometry>
+			<material>
+			  <ambient>0.3 0.5 0.3 1</ambient>
+			  <diffuse>0.3 0.5 0.3 1</diffuse>
+			  <specular>0.1 0.1 0.1 1</specular>
+			  <emissive>0 0 0 0</emissive>
+			</material>
+        </visual>
+      </link>
+    </model>
+    <model name="wiazka_prawa">
+      <pose>-0.8 0 -0.3  0 0 0</pose>
+      <static>true</static>
+      <link name="body">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file:///home/piotr/a8/REMODEL/workstation/wiazka_prawa_in_m.stl</uri></mesh>
+          </geometry>
+			<material>
+			  <ambient>0.3 0.3 0.5 1</ambient>
+			  <diffuse>0.3 0.3 0.5 1</diffuse>
+			  <specular>0.1 0.1 0.1 1</specular>
+			  <emissive>0 0 0 0</emissive>
+			</material>
+        </visual>
+      </link>
+    </model>
+    <model name="postument">
+      <pose>0 0 0.3  0 0 0</pose>
+      <static>true</static>
+      <link name="body">
+        <visual name="visual">
+          <geometry>
+            <box>
+		<size>0.15 1.5 0.6</size>
+	    </box>
+          </geometry>
+			<material>
+			  <ambient>0.5 0.5 0.5 1</ambient>
+			  <diffuse>0.5 0.5 0.5 1</diffuse>
+			  <specular>0.1 0.1 0.1 1</specular>
+			  <emissive>0 0 0 0</emissive>
+			</material>
+        </visual>
+      </link>
+    </model>
+    <light type="point" name="point">
+      <pose>0 2 2 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>.1 .1 .1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.2</linear>
+        <constant>0.8</constant>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+      <cast_shadows>true</cast_shadows>
+    </light>
+  </world>
+</sdf>
